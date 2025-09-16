@@ -1,8 +1,8 @@
 name: Build Beta
 
 on:
-  push:
  workflow_dispatch:
+
 
 
 jobs:
