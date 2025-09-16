@@ -9,7 +9,7 @@ name: easycontrol
 
 on:
   release:
-    types: [created]
+    types: 2.0.0
 
 jobs:
   build:
