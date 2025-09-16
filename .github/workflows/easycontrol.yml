@@ -1,4 +1,4 @@
-name: easycontrol
+name: Easycontrol_For_Car
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Setup Gradle
-      uses: ./.github/actions/setup
+      uses: gradle/actions/setup-gradle@v3
 
     - name: Build the app
       working-directory: ./easycontrol
@@ -27,7 +27,7 @@ jobs:
         ./gradlew :app:assembleDebug --stacktrace
         
     - name: Upload APK
-      uses: ./.github/actions/upload-artifact
+      uses: actions/upload-artifact@v4
       with:
-        name: easycontrol
-        path: ./easycontrol/app/build/outputs/apk/release/*.apk
+        name: my-build-apk
+        path: ./easycontrol/app/build/outputs/apk/debug/*.apk
