@@ -3,7 +3,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:background="#222325"
+  android:background="#0e1926"
   android:keepScreenOn="true"
   tools:context=".client.view.FullActivity">
 
@@ -21,14 +21,14 @@
 
     <LinearLayout
       android:id="@+id/nav_bar"
-      android:layout_width="35dp"
+      android:layout_width="36dp"
       android:layout_height="match_parent"
       android:layout_gravity="end"
       android:visibility="gone"
       android:gravity="center"
       android:orientation="vertical"
-      android:paddingTop="50dp"
-      android:paddingBottom="10dp">
+      android:paddingTop="200dp"
+      android:paddingBottom="0dp">
 
       <ImageView
         android:id="@+id/button_switch"
@@ -36,7 +36,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:focusable="false"
-        android:padding="4dp"
+        android:padding="1dp"
         android:src="@drawable/square"
         android:tint="#DEDEDE" />
 
@@ -46,7 +46,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:focusable="false"
-        android:padding="4dp"
+        android:padding="1dp"
         android:src="@drawable/o"
         android:tint="#DEDEDE" />
 
@@ -56,19 +56,43 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:focusable="false"
-        android:padding="4dp"
+        android:padding="1dp"
         android:src="@drawable/caret_left"
         android:tint="#DEDEDE" />
 
       <ImageView
-        android:id="@+id/button_rotate"
+        android:id="@+id/button_transfer"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
         android:focusable="false"
-        android:padding="4dp"
-        android:src="@drawable/rotate"
+        android:padding="1dp"
+        android:src="@drawable/share_out"
         android:tint="#DEDEDE" />
 
+      <ImageView
+        android:id="@+id/button_light_off"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:focusable="false"
+        android:padding="1dp"
+        android:src="@drawable/lightbulb_off"
+        android:tint="#DEDEDE" />
+      
+      <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:focusable="false"
+        android:tint="#DEDEDE" />      
+
+      <ImageView
+        android:id="@+id/button_close"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:focusable="false"
+        android:padding="1dp"
+        android:src="@drawable/x"
+        android:tint="#DEDEDE" />
+      
     </LinearLayout>
 
     <LinearLayout
@@ -81,72 +105,13 @@
   </LinearLayout>
 
   <ImageView
-    android:id="@+id/button_more"
-    android:layout_width="35dp"
+    android:id="@+id/button_nav_bar"
+    android:layout_width="36dp"
     android:layout_height="50dp"
     android:layout_gravity="start|top"
     android:focusable="false"
-    android:padding="4dp"
-    android:src="@drawable/ellipsis_vertical"
+    android:padding="1dp"
+    android:src="@drawable/not_equal"
     android:tint="#DEDEDE" />
-
-  <GridLayout
-    android:id="@+id/bar_view"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="top|start"
-    android:visibility="gone"
-    android:layout_marginStart="45dp"
-    android:layout_marginTop="10dp"
-    android:background="@drawable/background_cron"
-    android:columnCount="8"
-    android:elevation="6dp"
-    android:padding="8dp">
-
-    <ImageView
-      android:id="@+id/button_nav_bar"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/not_equal"
-      android:tint="@color/onCardBackground" />
-
-    <ImageView
-      android:id="@+id/button_transfer"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/share_out"
-      android:tint="@color/onCardBackground" />
-
-    <ImageView
-      android:id="@+id/button_light_off"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/lightbulb_off"
-      android:tint="@color/onCardBackground" />
-
-    <ImageView
-      android:id="@+id/button_power"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/power_off"
-      android:tint="@color/onCardBackground" />
-
-    <ImageView
-      android:id="@+id/button_close"
-      android:layout_width="38dp"
-      android:layout_height="38dp"
-      android:layout_margin="4dp"
-      android:focusable="false"
-      android:src="@drawable/x"
-      android:tint="@color/alert" />
-  </GridLayout>
 
 </FrameLayout>
