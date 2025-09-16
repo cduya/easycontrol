@@ -1,0 +1,33 @@
+name: easycontrol
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Setup Gradle
+      uses: ./.github/actions/setup
+
+    - name: Build the app
+      working-directory: ./easycontrol
+      run: |
+        chmod +x gradlew
+        ./gradlew :server:copyRelease --stacktrace
+        ./gradlew :app:assembleDebug --stacktrace
+        
+    - name: Upload APK
+      uses: ./.github/actions/upload-artifact
+      with:
+        name: easycontrol
+        path: ./easycontrol/app/build/outputs/apk/release/*.apk
