@@ -98,14 +98,13 @@ public class SetActivity extends Activity {
     setActivity.setOther.addView(PublicTools.createSwitchCard(this, getString(R.string.set_reconnect), getString(R.string.set_reconnect_detail), AppData.setting.getShowReconnect(), isChecked -> AppData.setting.setShowReconnect(isChecked)).getRoot());
     setActivity.setOther.addView(PublicTools.createSwitchCard(this, getString(R.string.set_connect_usb), getString(R.string.set_connect_usb_detail), AppData.setting.getShowConnectUSB(), isChecked -> AppData.setting.setShowConnectUSB(isChecked)).getRoot());
     setActivity.setOther.addView(PublicTools.createSpinnerCard(this, getString(R.string.set_auto_countdown), getString(R.string.set_auto_countdown_detail), AppData.setting.getCountdownTime(), reconnectTimeAdapter, str -> AppData.setting.setCountdownTime(str)).getRoot());
-    setActivity.setOther.addView(PublicTools.createTextCard(this, getString(R.string.set_other_log), () -> startActivity(new Intent(this, LogActivity.class))).getRoot());
     setActivity.setOther.addView(PublicTools.createTextCard(this, getString(R.string.set_about_ip), () -> startActivity(new Intent(this, IpActivity.class))).getRoot());
     setActivity.setOther.addView(PublicTools.createTextCard(this, getString(R.string.set_other_custom_key), () -> startActivity(new Intent(this, AdbKeyActivity.class))).getRoot());
     setActivity.setOther.addView(PublicTools.createTextCard(this, getString(R.string.set_other_clear_key), () -> {
       AppData.reGenerateAdbKeyPair(this);
       Toast.makeText(this, getString(R.string.set_other_clear_key_code), Toast.LENGTH_SHORT).show();
     }).getRoot());
-    
+    setActivity.setOther.addView(PublicTools.createTextCard(this, getString(R.string.set_other_log), () -> startActivity(new Intent(this, LogActivity.class))).getRoot());
   }
 
   // 设置按钮监听
