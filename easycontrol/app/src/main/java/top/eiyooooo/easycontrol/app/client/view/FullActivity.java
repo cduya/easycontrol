@@ -136,38 +136,6 @@ public class FullActivity extends Activity {
     setRequestedOrientation(orientation);
   }
 
-  // 导航栏隐藏
-  private void setNavBarHide(boolean isShow) {
-    fullActivity.navBar.setVisibility(isShow ? View.VISIBLE : View.GONE);
-    fullActivity.buttonNavBar.setImageResource(isShow ? R.drawable.not_equal : R.drawable.equals);
-  }
-
-  private int orientation;
-
-  private void changeBarView() {
-    if (clientView == null) return;
-    boolean toShowView = fullActivity.barView.getVisibility() == View.GONE;
-    boolean isLandscape = orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
-    clientView.viewAnim(fullActivity.barView, toShowView, 0, PublicTools.dp2px(40f) * (isLandscape ? -1 : 1), (isStart -> {
-      if (isStart && toShowView) fullActivity.barView.setVisibility(View.VISIBLE);
-      else if (!isStart && !toShowView) fullActivity.barView.setVisibility(View.GONE);
-    }));
-  }
-
-  private Thread barViewTimerThread = null;
-  private void barViewTimer() {
-    if (barViewTimerThread != null) barViewTimerThread.interrupt();
-    barViewTimerThread = new Thread(() -> {
-      try {
-        Thread.sleep(2000);
-        AppData.uiHandler.post(() -> {
-          if (fullActivity.barView.getVisibility() == View.VISIBLE) changeBarView();
-        });
-      } catch (InterruptedException ignored) {
-      }
-    });
-    barViewTimerThread.start();
-  }
 
   // 设置键盘监听
   private void setKeyEvent() {
