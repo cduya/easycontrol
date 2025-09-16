@@ -105,10 +105,7 @@ public class FullActivity extends Activity {
     fullActivity.buttonBack.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(4, 0, -1));
     fullActivity.buttonHome.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(3, 0, -1));
     fullActivity.buttonSwitch.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(187, 0, -1));
-    fullActivity.buttonMore.setOnClickListener(v -> {
-      changeBarView();
-      barViewTimer();
-    });
+
     fullActivity.buttonNavBar.setOnClickListener(v -> {
       setNavBarHide(fullActivity.navBar.getVisibility() == View.GONE);
       barViewTimer();
@@ -132,10 +129,7 @@ public class FullActivity extends Activity {
       }
       barViewTimer();
     });
-    fullActivity.buttonPower.setOnClickListener(v -> {
-      clientView.controlPacket.sendPowerEvent();
-      barViewTimer();
-    });
+
     DisplayMetrics metrics = getResources().getDisplayMetrics();
     if (metrics.widthPixels > metrics.heightPixels) orientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
     else orientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
