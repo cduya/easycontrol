@@ -1,4 +1,4 @@
-name: carcontrol
+name: easycontrol
 
 on:
   workflow_dispatch:
