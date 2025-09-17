@@ -101,14 +101,17 @@ public class FullActivity extends Activity {
     fullActivity.buttonNavBar.setOnClickListener(v -> {
       setNavBarHide(fullActivity.navBar.getVisibility() == View.GONE);
     });     
+    
     fullActivity.buttonBack.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(4, 0, -1));
     fullActivity.buttonHome.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(3, 0, -1));
     fullActivity.buttonSwitch.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(187, 0, -1));
-    fullActivity.buttonTransfer.setImageResource(R.drawable.share_in);
+    
+    if (clientView.mode == 1) fullActivity.buttonTransfer.setImageResource(R.drawable.share_in);
     fullActivity.buttonTransfer.setOnClickListener(v -> {
       clientView.changeMode.run(clientView.mode == 0 ? 1 : 0);
     });    
-    fullActivity.buttonLightOff.setImageResource(R.drawable.lightbulb);
+    
+    if (!clientView.lightState) fullActivity.buttonLightOff.setImageResource(R.drawable.lightbulb);
     fullActivity.buttonLightOff.setOnClickListener(v -> {
       if (clientView.lightState) {
         clientView.controlPacket.sendLightEvent(Display.STATE_UNKNOWN);
@@ -119,6 +122,7 @@ public class FullActivity extends Activity {
         fullActivity.buttonLightOff.setImageResource(R.drawable.lightbulb_off);
         clientView.lightState = true;
       }      
+      
     fullActivity.buttonClose.setOnClickListener(v -> clientView.onClose.run());         
     });
     
