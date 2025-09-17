@@ -12,14 +12,14 @@
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingTop="5dp"
-    android:paddingBottom="15dp">
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp">
 
     <ImageView
       android:id="@+id/button_set"
-      android:layout_width="54dp"
-      android:layout_height="54dp"
-      android:padding="15dp"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:padding="13dp"
       android:src="@drawable/bars"
       android:tint="@color/onBackground" />
 
@@ -28,37 +28,30 @@
       android:layout_height="wrap_content"
       android:layout_weight="1"
       android:orientation="vertical">
-
-      <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textColor="@color/onBackground"
-        android:textSize="@dimen/largeFont" />
-
+      
     </LinearLayout>
 
     <ImageView
       android:id="@+id/button_refresh"
-      android:layout_width="54dp"
-      android:layout_height="54dp"
-      android:padding="13.5dp"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:padding="11dp"
       android:src="@drawable/refresh"
       android:tint="@color/onBackground" />
 
     <ImageView
       android:id="@+id/button_pair"
-      android:layout_width="54dp"
-      android:layout_height="54dp"
-      android:padding="14dp"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:padding="12dp"
       android:src="@drawable/pair"
       android:tint="@color/onBackground" />
 
     <ImageView
       android:id="@+id/button_add"
-      android:layout_width="54dp"
-      android:layout_height="54dp"
-      android:padding="15dp"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:padding="13dp"
       android:src="@drawable/plus"
       android:tint="@color/onBackground" />
 
