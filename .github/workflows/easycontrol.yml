@@ -25,7 +25,7 @@ jobs:
       run: |
         chmod +x gradlew
         ./gradlew :server:copyRelease --stacktrace
-        ./gradlew :app:assembleDebug --stacktrace
+        ./gradlew :app:copyRelease --stacktrace
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
