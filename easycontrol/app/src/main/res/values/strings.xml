@@ -105,6 +105,7 @@
   <string name="add_device_button">确认</string>
 
   <!-- 设备设置模块 -->
+  <string name="set_device_title">设备配置</string>
   <string name="set_device_button_night_mode">黑暗模式</string>
   <string name="night_mode_current">黑暗模式: </string>
   <string name="night_mode_auto">自动</string>
