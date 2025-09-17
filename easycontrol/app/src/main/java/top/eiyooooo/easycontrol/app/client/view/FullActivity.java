@@ -104,14 +104,14 @@ public class FullActivity extends Activity {
 
     fullActivity.buttonNavBar.setOnClickListener(v -> {
       setNavBarHide(fullActivity.navBar.getVisibility() == View.GONE);
-      barViewTimer();
     });
+    
     fullActivity.buttonClose.setOnClickListener(v -> clientView.onClose.run());
     if (clientView.mode == 1) fullActivity.buttonTransfer.setImageResource(R.drawable.share_in);
     fullActivity.buttonTransfer.setOnClickListener(v -> {
       clientView.changeMode.run(clientView.mode == 0 ? 1 : 0);
-      barViewTimer();
     });
+    
     if (!clientView.lightState) fullActivity.buttonLightOff.setImageResource(R.drawable.lightbulb);
     fullActivity.buttonLightOff.setOnClickListener(v -> {
       if (clientView.lightState) {
@@ -123,7 +123,7 @@ public class FullActivity extends Activity {
         fullActivity.buttonLightOff.setImageResource(R.drawable.lightbulb_off);
         clientView.lightState = true;
       }
-      barViewTimer();
+
     });
 
     DisplayMetrics metrics = getResources().getDisplayMetrics();
@@ -140,18 +140,6 @@ public class FullActivity extends Activity {
 
   private int orientation;
 
-  private Thread barViewTimerThread = null;
-  private void barViewTimer() {
-    if (barViewTimerThread != null) barViewTimerThread.interrupt();
-    barViewTimerThread = new Thread(() -> {
-      try {
-        Thread.sleep(2000);
-      } catch (InterruptedException ignored) {
-      }
-    });
-    barViewTimerThread.start();
-  }
-  
   // 设置键盘监听
   private void setKeyEvent() {
     fullActivity.editText.requestFocus();
