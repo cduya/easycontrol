@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     maven { url "https://jitpack.io" }
   }
 }
-rootProject.name = "Easycontrol"
+rootProject.name = "easycontrol"
 include ':app'
 include ':server'
