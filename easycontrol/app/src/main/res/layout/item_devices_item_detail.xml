@@ -15,9 +15,36 @@
   <GridLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:columnCount="3"
+    android:columnCount="6"
     android:padding="3dp">
+    <Button
+      android:id="@+id/display_mirroring"
+      android:layout_width="wrap_content"
+      android:layout_height="40dp"
+      android:layout_columnWeight="9"
+      android:background="@drawable/background_cron_stroke"
+      android:backgroundTint="@color/alert"
+      android:gravity="center"
+      android:text="@string/start_display_mirroring"
+      android:textColor="@color/button"
+      android:textSize="@dimen/smallFont" />
 
+    <Space android:layout_columnWeight="1" />
+
+    <Button
+      android:id="@+id/create_display"
+      android:layout_width="wrap_content"
+      android:layout_height="40dp"
+      android:layout_columnWeight="9"
+      android:background="@drawable/background_cron_stroke"
+      android:backgroundTint="@color/alert"
+      android:gravity="center"
+      android:text="@string/start_application_transfer"
+      android:textColor="@color/button"
+      android:textSize="@dimen/smallFont" />
+
+    <Space android:layout_columnWeight="1" />
+    
     <LinearLayout
       android:layout_columnWeight="9"
       android:layout_width="0dp"
@@ -25,7 +52,7 @@
       android:gravity="center_vertical"
       android:background="@drawable/background_cron_stroke"
       android:backgroundTint="@color/button" >
-
+      
       <FrameLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -54,12 +81,11 @@
 
     </LinearLayout>
 
-    <Space android:layout_columnWeight="1" />
-
     <LinearLayout
       android:layout_columnWeight="9"
       android:layout_width="0dp"
       android:layout_height="40dp"
+      android:visblity="gone"
       android:gravity="center_vertical"
       android:background="@drawable/background_cron_stroke"
       android:backgroundTint="@color/button" >
@@ -92,36 +118,6 @@
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     </LinearLayout>
-
-    <Space
-      android:layout_height="4dp"
-      android:layout_columnSpan="3" />
-
-    <Button
-      android:id="@+id/display_mirroring"
-      android:layout_width="wrap_content"
-      android:layout_height="40dp"
-      android:layout_columnWeight="9"
-      android:background="@drawable/background_cron_stroke"
-      android:backgroundTint="@color/alert"
-      android:gravity="center"
-      android:text="@string/start_display_mirroring"
-      android:textColor="@color/button"
-      android:textSize="@dimen/smallFont" />
-
-    <Space android:layout_columnWeight="1" />
-
-      <Button
-        android:id="@+id/create_display"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_columnWeight="9"
-        android:background="@drawable/background_cron_stroke"
-        android:backgroundTint="@color/alert"
-        android:gravity="center"
-        android:text="@string/start_application_transfer"
-        android:textColor="@color/button"
-        android:textSize="@dimen/smallFont" />
 
     </GridLayout>
 
