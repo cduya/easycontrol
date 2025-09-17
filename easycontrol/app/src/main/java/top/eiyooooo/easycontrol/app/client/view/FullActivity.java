@@ -98,10 +98,6 @@ public class FullActivity extends Activity {
 
   // 设置按钮监听
   private void setButtonListener() {
-    fullActivity.buttonRotate.setOnClickListener(v -> {
-      clientView.controlPacket.sendRotateEvent();
-      barViewTimer();
-    });
     fullActivity.buttonBack.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(4, 0, -1));
     fullActivity.buttonHome.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(3, 0, -1));
     fullActivity.buttonSwitch.setOnClickListener(v -> clientView.controlPacket.sendKeyEvent(187, 0, -1));
