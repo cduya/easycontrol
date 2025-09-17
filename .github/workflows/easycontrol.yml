@@ -24,9 +24,10 @@ jobs:
       run: |
         chmod +x gradlew
         ./gradlew :server:copyRelease --stacktrace
-                
+        ./gradlew :app:assembleDebug --stacktrace
+        
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: easycontrol
-        path: ./easycontrol/app/build/outputs/apk/Release/*.apk
+        path: ./easycontrol/app/build/outputs/apk/debug/*.apk
