@@ -122,9 +122,9 @@ public class FullActivity extends Activity {
         fullActivity.buttonLightOff.setImageResource(R.drawable.lightbulb_off);
         clientView.lightState = true;
       }      
-      
-    fullActivity.buttonClose.setOnClickListener(v -> clientView.onClose.run());         
     });
+    
+    fullActivity.buttonClose.setOnClickListener(v -> clientView.onClose.run());       
     
     DisplayMetrics metrics = getResources().getDisplayMetrics();
     if (metrics.widthPixels > metrics.heightPixels) orientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
