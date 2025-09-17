@@ -146,9 +146,6 @@ public class FullActivity extends Activity {
     barViewTimerThread = new Thread(() -> {
       try {
         Thread.sleep(2000);
-        AppData.uiHandler.post(() -> {
-          if (fullActivity.barView.getVisibility() == View.VISIBLE) changeBarView();
-        });
       } catch (InterruptedException ignored) {
       }
     });
