@@ -140,21 +140,6 @@ public class FullActivity extends Activity {
 
   private int orientation;
 
-  private Thread barViewTimerThread = null;
-  
-  private void barViewTimer() {
-    if (barViewTimerThread != null) barViewTimerThread.interrupt();
-    barViewTimerThread = new Thread(() -> {
-      try {
-        Thread.sleep(2000);
-        AppData.uiHandler.post(() -> {
-          if (fullActivity.barView.getVisibility() == View.VISIBLE) changeBarView();
-        });
-      } catch (InterruptedException ignored) {
-      }
-    });
-    barViewTimerThread.start();
-  }
   
   // 设置键盘监听
   private void setKeyEvent() {
