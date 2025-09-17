@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep class top.eiyooooo.easycontrol.server {
+    main(java.lang.String[]);
+}
+-keep class android.content.IOnPrimaryClipChangedListener{*;}
+-keep class android.view.IRotationWatcher{*;}
+-keep class top.eiyooooo.easycontrol.server.helper.FakeContext{*;}
