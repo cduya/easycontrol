@@ -20,6 +20,8 @@ android {
         abiFilters "arm64-v8a"
       }
       debuggable false
+      minifyEnabled true
+      shrinkResources true
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
