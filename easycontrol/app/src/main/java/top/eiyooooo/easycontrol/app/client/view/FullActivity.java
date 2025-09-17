@@ -144,6 +144,16 @@ public class FullActivity extends Activity {
 
   private int orientation;
 
+  private void changeBarView() {
+    if (clientView == null) return;
+    boolean toShowView = fullActivity.barView.getVisibility() == View.GONE;
+    boolean isLandscape = orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+    clientView.viewAnim(fullActivity.barView, toShowView, 0, PublicTools.dp2px(40f) * (isLandscape ? -1 : 1), (isStart -> {
+      if (isStart && toShowView) fullActivity.barView.setVisibility(View.VISIBLE);
+      else if (!isStart && !toShowView) fullActivity.barView.setVisibility(View.GONE);
+    }));
+  }
+
   private Thread barViewTimerThread = null;
   
   private void barViewTimer() {
