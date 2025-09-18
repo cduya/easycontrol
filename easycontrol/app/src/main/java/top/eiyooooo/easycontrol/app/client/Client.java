@@ -123,7 +123,6 @@ public class Client {
         keepAliveThread.start();
       }
     });
-    PublicTools.logToast(AppData.main.getString(R.string.loading_text));
     loadingTimeOutThread.start();
     startThread.start();
   }
