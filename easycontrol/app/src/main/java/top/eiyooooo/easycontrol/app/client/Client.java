@@ -123,6 +123,7 @@ public class Client {
         keepAliveThread.start();
       }
     });
+    AppData.setting.getAlwaysFullMode());
     loadingTimeOutThread.start();
     startThread.start();
   }
