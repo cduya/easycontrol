@@ -12,7 +12,7 @@
   <!-- 特殊色彩 -->
   <color name="button">#2E2E2E</color>
   <color name="onButton">#E0E0E0</color>
-  <color name="alert">#ca5357</color>
+  <color name="alert">#00acde</color>
   <color name="onAlert">#ded8d8</color>
   <color name="translucent">#000000ff</color>
 
