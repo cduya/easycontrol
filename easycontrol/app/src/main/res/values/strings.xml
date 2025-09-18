@@ -135,6 +135,9 @@
   <string name="error_device_not_found">未找到该设备</string>
   <string name="error_default_device_not_found">未找到默认设备</string>
 
+    <!-- 加载中模块 -->
+  <string name="loading_text">加加加加载中</string>
+
   <!-- 提示 -->
   <string name="tip_application_transfer">应用流转</string>
   <string name="tip_default_device">默认设备</string>
