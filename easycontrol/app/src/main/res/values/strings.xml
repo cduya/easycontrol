@@ -122,9 +122,6 @@
   <string name="set_device_button_change">修改设置</string>
   <string name="set_device_button_delete">删除设备</string>
 
-    <!-- 加载中模块 -->
-  <string name="loading_text">・・・・</string>
-
   <!-- 错误提示 -->
   <string name="error_no_browser">没有默认浏览器</string>
   <string name="error_address_error">地址格式错误</string>
