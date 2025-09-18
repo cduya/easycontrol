@@ -21,7 +21,7 @@
 
     <LinearLayout
       android:id="@+id/nav_bar"
-      android:layout_width="36dp"
+      android:layout_width="30dp"
       android:layout_height="match_parent"
       android:layout_gravity="end"
       android:visibility="gone"
@@ -35,8 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="false"
-        android:padding="1dp"
+        android:focusable="false"        
         android:src="@drawable/square"
         android:tint="#DEDEDE" />
 
@@ -45,8 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="false"
-        android:padding="1dp"
+        android:focusable="false"        
         android:src="@drawable/o"
         android:tint="#DEDEDE" />
 
@@ -55,8 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="false"
-        android:padding="1dp"
+        android:focusable="false"        
         android:src="@drawable/caret_left"
         android:tint="#DEDEDE" />
 
@@ -65,8 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="false"
-        android:padding="1dp"
+        android:focusable="false"        
         android:src="@drawable/share_out"
         android:tint="#DEDEDE" />
 
@@ -75,8 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:focusable="false"
-        android:padding="1dp"
+        android:focusable="false"        
         android:src="@drawable/lightbulb_off"
         android:tint="#DEDEDE" />
       
@@ -90,8 +85,7 @@
         android:id="@+id/button_close"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:focusable="false"
-        android:padding="1dp"
+        android:focusable="false"        
         android:src="@drawable/x"
         android:tint="#DEDEDE" />
       
@@ -108,11 +102,10 @@
 
   <ImageView
     android:id="@+id/button_nav_bar"
-    android:layout_width="36dp"
+    android:layout_width="30dp"
     android:layout_height="50dp"
     android:layout_gravity="start|top"
-    android:focusable="false"
-    android:padding="1dp"
+    android:focusable="false"    
     android:src="@drawable/not_equal"
     android:tint="#DEDEDE" />
 
