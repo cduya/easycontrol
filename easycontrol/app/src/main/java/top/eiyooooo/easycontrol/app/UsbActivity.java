@@ -1,4 +1,4 @@
-package top.easycontrol.easycontrol.app;
+package top.eiyooooo.easycontrol.app;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import top.easycontrol.easycontrol.app.entity.AppData;
-import top.easycontrol.easycontrol.app.helper.MyBroadcastReceiver;
-import top.easycontrol.easycontrol.app.helper.PublicTools;
+import top.eiyooooo.easycontrol.app.entity.AppData;
+import top.eiyooooo.easycontrol.app.helper.MyBroadcastReceiver;
+import top.eiyooooo.easycontrol.app.helper.PublicTools;
 
 public class UsbActivity extends Activity {
 
