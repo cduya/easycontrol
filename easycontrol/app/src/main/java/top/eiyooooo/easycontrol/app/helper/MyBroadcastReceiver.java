@@ -37,7 +37,6 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
     filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
     filter.addAction(ACTION_USB_PERMISSION);
-     filter.addAction(ACTION_UPDATE_USB);
     filter.addAction(ACTION_CONTROL);
     filter.addAction(ACTION_SCREEN_OFF);
     filter.addAction(ACTION_CONFIGURATION_CHANGED);
