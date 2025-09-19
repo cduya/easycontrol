@@ -54,7 +54,7 @@ public static final String ACTION_UPDATE_USB = "top.eiyooooo.easycontrol.app.UPD
   public void onReceive(Context context, Intent intent) {
     String action = intent.getAction();
     if (ACTION_SCREEN_OFF.equals(action)) handleScreenOff();
-      else if (ACTION_UPDATE_USB.equals(action) || ACTION_USB_PERMISSION.equals(action) || UsbManager.ACTION_USB_DEVICE_DETACHED.equals(action)) updateUSB();
+      else if (ACTION_UPDATE_USB.equals(action) || ACTION_USB_PERMISSION.equals(action);
     else if (ACTION_CONTROL.equals(action)) handleControl(intent);
     else if (ACTION_CONFIGURATION_CHANGED.equals(action)) handleConfigurationChanged();
     else handleUSB(context, intent);
