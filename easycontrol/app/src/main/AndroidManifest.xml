@@ -9,10 +9,6 @@
   
   <uses-feature android:name="android.hardware.usb.host" />
 
-  <uses-permission
-    android:name="android.permission.READ_EXTERNAL_STORAGE"
-    android:maxSdkVersion="28" />
-
   <application
     android:name=".helper.MyApplication"
     android:icon="@mipmap/ic_launcher"
