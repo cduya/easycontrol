@@ -37,8 +37,6 @@ public class MainActivity extends Activity {
     PublicTools.setLocale(this);
     mainActivity = ActivityMainBinding.inflate(this.getLayoutInflater());
     setContentView(mainActivity.getRoot());
-    //检测激活
-    if (!AppData.setting.getIsActive()) startActivity(new Intent(this, ActiveActivity.class));
 
     // 设置设备列表适配器、广播接收器    
     deviceListAdapter = new DeviceListAdapter(this, mainActivity.devicesList);
