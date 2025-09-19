@@ -1,4 +1,4 @@
-package top.saymzx.easycontrol.app;
+package top.eiyooooo.easycontrol.app;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -7,12 +7,12 @@ import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 
-import top.saymzx.easycontrol.app.databinding.ActivityActiveBinding;
-import top.saymzx.easycontrol.app.databinding.ItemLoadingBinding;
-import top.saymzx.easycontrol.app.entity.AppData;
-import top.saymzx.easycontrol.app.helper.ActiveHelper;
-import top.saymzx.easycontrol.app.helper.PublicTools;
-import top.saymzx.easycontrol.app.helper.ViewTools;
+import top.eiyooooo.easycontrol.app.databinding.ActivityActiveBinding;
+import top.eiyooooo.easycontrol.app.databinding.ItemLoadingBinding;
+import top.eiyooooo.easycontrol.app.entity.AppData;
+import top.eiyooooo.easycontrol.app.helper.ActiveHelper;
+import top.eiyooooo.easycontrol.app.helper.PublicTools;
+import top.eiyooooo.easycontrol.app.helper.ViewTools;
 
 public class ActiveActivity extends Activity {
 
