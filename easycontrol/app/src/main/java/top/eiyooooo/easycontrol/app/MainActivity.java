@@ -37,7 +37,9 @@ public class MainActivity extends Activity {
     PublicTools.setLocale(this);
     mainActivity = ActivityMainBinding.inflate(this.getLayoutInflater());
     setContentView(mainActivity.getRoot());
-    // 设置设备列表适配器、广播接收器
+    // 检测激活
+    checkActive();
+    // 设置设备列表适配器、广播接收器    
     deviceListAdapter = new DeviceListAdapter(this, mainActivity.devicesList);
     mainActivity.devicesList.setAdapter(deviceListAdapter);
     AppData.myBroadcastReceiver.setDeviceListAdapter(deviceListAdapter);
