@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import top.saymzx.easycontrol.app.entity.AppData;
-import top.saymzx.easycontrol.app.helper.MyBroadcastReceiver;
-import top.saymzx.easycontrol.app.helper.PublicTools;
+import top.easycontrol.easycontrol.app.entity.AppData;
+import top.easycontrol.easycontrol.app.helper.MyBroadcastReceiver;
+import top.easycontrol.easycontrol.app.helper.PublicTools;
 
 public class UsbActivity extends Activity {
 
