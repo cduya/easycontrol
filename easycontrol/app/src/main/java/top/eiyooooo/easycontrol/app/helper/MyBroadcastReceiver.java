@@ -22,7 +22,6 @@ import java.util.Objects;
 
 public class MyBroadcastReceiver extends BroadcastReceiver {
   
-public static final String ACTION_UPDATE_USB = "top.eiyooooo.easycontrol.app.UPDATE_USB";
   private static final String ACTION_USB_PERMISSION = "top.eiyooooo.easycontrol.app.USB_PERMISSION";
   private static final String ACTION_CONTROL = "top.eiyooooo.easycontrol.app.CONTROL";
   private static final String ACTION_SCREEN_OFF = "android.intent.action.SCREEN_OFF";
@@ -54,7 +53,6 @@ public static final String ACTION_UPDATE_USB = "top.eiyooooo.easycontrol.app.UPD
   public void onReceive(Context context, Intent intent) {
     String action = intent.getAction();
     if (ACTION_SCREEN_OFF.equals(action)) handleScreenOff();
-    else if (ACTION_UPDATE_USB.equals(action);
     else if (ACTION_CONTROL.equals(action)) handleControl(intent);
     else if (ACTION_CONFIGURATION_CHANGED.equals(action)) handleConfigurationChanged();
     else handleUSB(context, intent);
