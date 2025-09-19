@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class MyBroadcastReceiver extends BroadcastReceiver {
   
-
+public static final String ACTION_UPDATE_USB = "top.eiyooooo.easycontrol.app.UPDATE_USB";
   private static final String ACTION_USB_PERMISSION = "top.eiyooooo.easycontrol.app.USB_PERMISSION";
   private static final String ACTION_CONTROL = "top.eiyooooo.easycontrol.app.CONTROL";
   private static final String ACTION_SCREEN_OFF = "android.intent.action.SCREEN_OFF";
@@ -38,6 +38,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
     filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
     filter.addAction(ACTION_USB_PERMISSION);
+     filter.addAction(ACTION_UPDATE_USB);
     filter.addAction(ACTION_CONTROL);
     filter.addAction(ACTION_SCREEN_OFF);
     filter.addAction(ACTION_CONFIGURATION_CHANGED);
@@ -53,6 +54,7 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
   public void onReceive(Context context, Intent intent) {
     String action = intent.getAction();
     if (ACTION_SCREEN_OFF.equals(action)) handleScreenOff();
+      else if (ACTION_UPDATE_USB.equals(action) || ACTION_USB_PERMISSION.equals(action) || UsbManager.ACTION_USB_DEVICE_DETACHED.equals(action)) updateUSB();
     else if (ACTION_CONTROL.equals(action)) handleControl(intent);
     else if (ACTION_CONFIGURATION_CHANGED.equals(action)) handleConfigurationChanged();
     else handleUSB(context, intent);
