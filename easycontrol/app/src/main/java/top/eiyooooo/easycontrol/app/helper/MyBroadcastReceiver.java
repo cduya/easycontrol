@@ -21,7 +21,8 @@ import java.util.Map;
 import java.util.Objects;
 
 public class MyBroadcastReceiver extends BroadcastReceiver {
-
+  
+public static final String ACTION_UPDATE_USB = "top.eiyooooo.easycontrol.app.UPDATE_USB";
   private static final String ACTION_USB_PERMISSION = "top.eiyooooo.easycontrol.app.USB_PERMISSION";
   private static final String ACTION_CONTROL = "top.eiyooooo.easycontrol.app.CONTROL";
   private static final String ACTION_SCREEN_OFF = "android.intent.action.SCREEN_OFF";
