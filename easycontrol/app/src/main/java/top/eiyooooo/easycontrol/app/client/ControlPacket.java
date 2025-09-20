@@ -22,20 +22,6 @@ public class ControlPacket {
     return bufferStream.readByteArray(bufferStream.readInt()).array();
   }
 
-  // 剪切板
-  public String nowClipboardText = "";
-
-  public void checkClipBoard() {
-    ClipData clipBoard = AppData.clipBoard.getPrimaryClip();
-    if (clipBoard != null && clipBoard.getItemCount() > 0) {
-      String newClipBoardText = String.valueOf(clipBoard.getItemAt(0).getText());
-      if (!Objects.equals(nowClipboardText, newClipBoardText)) {
-        nowClipboardText = newClipBoardText;
-        sendClipboardEvent();
-      }
-    }
-  }
-
   // 发送触摸事件
   public void sendTouchEvent(int action, int p, float x, float y, int offsetTime) {
     if (x < 0 || x > 1 || y < 0 || y > 1) {
@@ -71,18 +57,6 @@ public class ControlPacket {
     byteBuffer.putInt(key);
     byteBuffer.putInt(meta);
     byteBuffer.putInt(displayIdToInject);
-    byteBuffer.flip();
-    write.run(byteBuffer);
-  }
-
-  // 发送剪切板事件
-  private void sendClipboardEvent() {
-    byte[] tmpTextByte = nowClipboardText.getBytes(StandardCharsets.UTF_8);
-    if (tmpTextByte.length == 0 || tmpTextByte.length > 5000) return;
-    ByteBuffer byteBuffer = ByteBuffer.allocate(5 + tmpTextByte.length);
-    byteBuffer.put((byte) 3);
-    byteBuffer.putInt(tmpTextByte.length);
-    byteBuffer.put(tmpTextByte);
     byteBuffer.flip();
     write.run(byteBuffer);
   }
