@@ -254,10 +254,6 @@ public class DeviceListAdapter extends BaseExpandableListAdapter {
     } else {
       itemSetDeviceBinding.buttonStartWireless.setVisibility(View.GONE);
     }
-    itemSetDeviceBinding.buttonNightMode.setOnClickListener(v -> {
-      dialog.cancel();
-      PublicTools.showNightModeChanger(context, device);
-    });
     itemSetDeviceBinding.buttonGetUuid.setOnClickListener(v -> {
       dialog.cancel();
       AppData.clipBoard.setPrimaryClip(ClipData.newPlainText(MIMETYPE_TEXT_PLAIN, device.uuid));
