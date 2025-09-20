@@ -13,8 +13,6 @@ import top.eiyooooo.easycontrol.server.helper.VideoEncode;
 import top.eiyooooo.easycontrol.server.utils.L;
 import top.eiyooooo.easycontrol.server.utils.Workarounds;
 import top.eiyooooo.easycontrol.server.wrappers.ServiceManager;
-import top.eiyooooo.easycontrol.server.wrappers.UiModeManager;
-
 import java.io.DataInputStream;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -172,10 +170,6 @@ public final class Scrcpy {
                     case 8:
                         Device.changePower();
                         break;
-                    case 9:
-                        if (Device.oldNightMode == -1) Device.oldNightMode = UiModeManager.getNightMode();
-                        UiModeManager.setNightMode(inputStream.readByte());
-                        break;
                 }
             }
         } catch (Exception e) {
@@ -202,13 +196,7 @@ public final class Scrcpy {
 
     // 释放资源
     private static void release() {
-        boolean lastScrcpy = false;
-        try {
-            lastScrcpy = Integer.parseInt(Channel.execReadOutput("ps -ef | grep easycontrol.server.Scrcpy | grep -v grep | grep -c 'easycontrol.server.Scrcpy'").replace("<!@n@!>", "")) == 1;
-        } catch (Exception e) {
-            L.w("get lastScrcpy error", e);
-        }
-
+        
         // 1
         try {
             inputStream.close();
@@ -241,9 +229,6 @@ public final class Scrcpy {
             } catch (Exception e) {
                 L.e("release error", e);
             }
-        }
-        if (lastScrcpy && Device.oldNightMode != -1 && UiModeManager.getNightMode() != Device.oldNightMode) {
-            UiModeManager.setNightMode(Device.oldNightMode);
         }
 
         // 4
