@@ -298,19 +298,6 @@ public class Server {
                     postResponse(Channel.execReadOutput(cmd));
                     break;
                 }
-                case "/getNightMode": {
-                    int nightMode = UiModeManager.getNightMode();
-                    L.d("nightMode: " + nightMode);
-                    postResponse(String.valueOf(nightMode));
-                    break;
-                }
-                case "/setNightMode": {
-                    String nightMode = request.get("nightMode");
-                    if (nightMode == null) throw new Exception("parameter 'nightMode' not found");
-                    UiModeManager.setNightMode(Integer.parseInt(nightMode));
-                    postResponse("success");
-                    break;
-                }
                 default:
                     postResponse("Unknown request");
             }
