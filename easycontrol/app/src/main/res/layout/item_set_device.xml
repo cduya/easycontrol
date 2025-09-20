@@ -21,7 +21,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_marginBottom="12dp"
-    android:columnCount="3"
     android:paddingStart="18dp"
     android:paddingEnd="18dp">
 
@@ -57,8 +56,8 @@
     android:text="@string/set_device_button_start_wireless"
     android:textColor="@color/onButton"
     android:textSize="@dimen/smallFont"
-    android:layout_marginStart="12dp"
-    android:layout_marginEnd="12dp"
-    android:layout_marginBottom="16dp" />
+    android:layout_marginStart="18dp"
+    android:layout_marginEnd="18dp"
+    android:layout_marginBottom="18dp" />
   
 </LinearLayout>
