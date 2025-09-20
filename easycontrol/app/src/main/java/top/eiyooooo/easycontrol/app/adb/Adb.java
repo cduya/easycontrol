@@ -98,7 +98,10 @@ public class Adb {
       serverShell = getShell();
       serverShell.write(ByteBuffer.wrap(cmd.getBytes()));
       waitingData(0);
-    } 
+    } catch (Exception e) {
+        if (!closing) {
+        PublicTools.logToast(AppData.main.getString(R.string.error_device_not_found));
+      }    
   }
 
   public static String getStringResponseFromServer(Device device, String request, String... args) throws Exception {
