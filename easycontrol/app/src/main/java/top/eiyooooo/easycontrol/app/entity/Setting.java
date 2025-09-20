@@ -151,15 +151,6 @@ public final class Setting {
     editor.apply();
   }
 
-  public boolean getForceDesktopMode() {
-    return sharedPreferences.getBoolean("ForceDesktopMode", false);
-  }
-
-  public void setForceDesktopMode(boolean value) {
-    editor.putBoolean("ForceDesktopMode", value);
-    editor.apply();
-  }
-
   public boolean getTryStartDefaultInAppTransfer() {
     return sharedPreferences.getBoolean("tryStartDefaultInAppTransfer", false);
   }
