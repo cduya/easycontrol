@@ -9,10 +9,7 @@
   <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="15dp"
-    android:layout_marginTop="15dp"
-    android:layout_marginEnd="15dp"
-    android:layout_marginBottom="5dp"
+    android:layout_margin="15dp"
     android:gravity="center"
     android:text="@string/set_device_title"
     android:textColor="@color/onCardBackground"
@@ -24,13 +21,12 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
     android:columnCount="3"
-    android:paddingStart="12dp"
-    android:paddingEnd="12dp"
-    android:paddingTop="12dp">
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp">
 
     <Button
       android:id="@+id/button_change"
-      android:layout_columnWeight="9"
+      android:layout_width="match_parent"
       android:background="@drawable/background_cron"
       android:backgroundTint="@color/alert"
       android:gravity="center"
@@ -38,11 +34,9 @@
       android:textColor="@color/onAlert"
       android:textSize="@dimen/smallFont" />
 
-    <Space android:layout_columnWeight="1" />
-
     <Button
       android:id="@+id/button_delete"
-      android:layout_columnWeight="9"
+      android:layout_width="match_parent"
       android:background="@drawable/background_cron"
       android:backgroundTint="@color/alert"
       android:gravity="center"
