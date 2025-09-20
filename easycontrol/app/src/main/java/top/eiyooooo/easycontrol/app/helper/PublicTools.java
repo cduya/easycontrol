@@ -61,7 +61,6 @@ public class PublicTools {
     Configuration config = resources.getConfiguration();
     String locale = AppData.setting.getDefaultLocale();
     if (locale.equals("")) config.locale = Locale.getDefault();
-    else if (locale.equals("en")) config.locale = Locale.ENGLISH;
     else if (locale.equals("zh")) config.locale = Locale.CHINESE;
     resources.updateConfiguration(config, resources.getDisplayMetrics());
   }
