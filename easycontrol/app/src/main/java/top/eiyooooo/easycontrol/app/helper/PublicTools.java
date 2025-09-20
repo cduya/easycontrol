@@ -293,10 +293,6 @@ public class PublicTools {
       if (setDefault) AppData.setting.setDefaultIsAudio(isChecked);
       else device.isAudio = isChecked;
     }).getRoot());
-    fatherLayout.addView(createSwitchCard(context, context.getString(R.string.option_night_mode_sync), context.getString(R.string.option_night_mode_sync_detail), setDefault ? AppData.setting.getDefaultNightModeSync() : device.nightModeSync, isChecked -> {
-      if (setDefault) AppData.setting.setDefaultNightModeSync(isChecked);
-      else device.nightModeSync = isChecked;
-    }).getRoot());
     fatherLayout.addView(createSwitchCard(context, context.getString(R.string.option_use_h265), context.getString(R.string.option_use_h265_detail), setDefault ? AppData.setting.getDefaultUseH265() : device.useH265, isChecked -> {
       if (setDefault) AppData.setting.setDefaultUseH265(isChecked);
       else device.useH265 = isChecked;
