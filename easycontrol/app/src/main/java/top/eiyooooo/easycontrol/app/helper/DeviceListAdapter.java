@@ -252,11 +252,6 @@ public class DeviceListAdapter extends BaseExpandableListAdapter {
     } else {
         itemSetDeviceBinding.buttonStartWireless.setVisibility(View.GONE);
     }
-    itemSetDeviceBinding.buttonGetUuid.setOnClickListener(v -> {
-      dialog.cancel();
-      AppData.clipBoard.setPrimaryClip(ClipData.newPlainText(MIMETYPE_TEXT_PLAIN, device.uuid));
-      Toast.makeText(AppData.main, AppData.main.getString(R.string.set_device_button_get_uuid_success), Toast.LENGTH_SHORT).show();
-    });
     itemSetDeviceBinding.buttonChange.setOnClickListener(v -> {
       dialog.cancel();
       PublicTools.createAddDeviceView(context, device, this).show();
