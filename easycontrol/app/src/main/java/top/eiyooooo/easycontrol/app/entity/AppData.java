@@ -2,7 +2,6 @@ package top.eiyooooo.easycontrol.app.entity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.UiModeManager;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.hardware.usb.UsbManager;
@@ -38,16 +37,12 @@ public class AppData {
   public static WifiManager wifiManager;
   public static UsbManager usbManager;
   public static WindowManager windowManager;
-  public static UiModeManager uiModeManager;
 
   // 设置值
   public static Setting setting;
 
   // 系统分辨率
   public static final DisplayMetrics realScreenSize = new DisplayMetrics();
-
-  // 当前黑暗模式
-  public static int nightMode;
 
   // 广播
   public static final MyBroadcastReceiver myBroadcastReceiver = new MyBroadcastReceiver();
@@ -62,8 +57,6 @@ public class AppData {
     wifiManager = (WifiManager) main.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
     usbManager = (UsbManager) main.getSystemService(Context.USB_SERVICE);
     windowManager = (WindowManager) main.getSystemService(Context.WINDOW_SERVICE);
-    uiModeManager = (UiModeManager) main.getSystemService(Context.UI_MODE_SERVICE);
-    nightMode = uiModeManager.getNightMode();
     myBroadcastReceiver.register(main);
     myBroadcastReceiver.checkConnectedUsb(main);
     getRealScreenSize(m);
