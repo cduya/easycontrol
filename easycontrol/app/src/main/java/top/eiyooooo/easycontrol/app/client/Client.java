@@ -80,8 +80,7 @@ public class Client {
     clientView = new ClientView(device, controlPacket, this::changeMode, () -> {
       status = 1;
       executeStreamInThread.start();
-      executeStreamVideoThread.start();
-      AppData.uiHandler.post(this::executeOtherService);
+      executeStreamVideoThread.start();     
     }, () -> release(null));
     // 连接
     loadingTimeOutThread = new Thread(() -> {
