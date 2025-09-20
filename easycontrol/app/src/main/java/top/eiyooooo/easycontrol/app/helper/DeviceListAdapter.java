@@ -229,7 +229,6 @@ public class DeviceListAdapter extends BaseExpandableListAdapter {
         }
       } catch (Exception e) {
         device.connection = 2;
-        L.log(device.uuid, e);
         for (Device d : devicesList) {
           if (d.uuid.equals(device.uuid)) {
             AppData.uiHandler.post(() -> expandableListView.collapseGroup(devicesList.indexOf(d)));
