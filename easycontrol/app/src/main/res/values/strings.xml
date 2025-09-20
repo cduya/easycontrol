@@ -100,14 +100,6 @@
 
   <!-- 设备设置模块 -->
   <string name="set_device_title">设备配置</string>
-  <string name="set_device_button_night_mode">黑暗模式</string>
-  <string name="night_mode_current">黑暗模式: </string>
-  <string name="night_mode_auto">自动</string>
-  <string name="night_mode_custom">自定义</string>
-  <string name="night_mode_yes">开启</string>
-  <string name="night_mode_no">关闭</string>
-  <string name="change_night_mode_success">请求成功</string>
-  <string name="change_night_mode_failed">请求失败</string>
   <string name="set_device_button_recover_error">连接失败，请检查ADB和网络</string>
   <string name="set_device_button_get_uuid">获取标识</string>
   <string name="set_device_button_get_uuid_success">已复制</string>
