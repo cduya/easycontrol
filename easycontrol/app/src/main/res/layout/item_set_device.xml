@@ -50,20 +50,6 @@
       android:textColor="@color/onAlert"
       android:textSize="@dimen/smallFont" />
 
-    <Space
-      android:layout_height="10dp"
-      android:layout_columnSpan="3" />
-
-    <Button
-      android:id="@+id/button_get_uuid"
-      android:layout_columnWeight="9"
-      android:background="@drawable/background_cron"
-      android:backgroundTint="@color/button"
-      android:gravity="center"
-      android:text="@string/set_device_button_get_uuid"
-      android:textColor="@color/onButton"
-      android:textSize="@dimen/smallFont" />
-
   </GridLayout>
   
   <Button
