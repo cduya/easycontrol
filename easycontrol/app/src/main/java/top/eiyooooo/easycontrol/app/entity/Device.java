@@ -33,7 +33,7 @@ public class Device {
                 boolean defaultFull,
                 boolean useH265,
                 boolean useOpus,
-                boolean connectOnStart,) {
+                boolean connectOnStart) {
     this.uuid = uuid;
     this.type = type;
     this.name = name;
