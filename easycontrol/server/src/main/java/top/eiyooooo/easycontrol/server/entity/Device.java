@@ -101,22 +101,6 @@ public final class Device {
         videoSize = isPortrait ? new Pair<>(minor, major) : new Pair<>(major, minor);
     }
 
-    private static String nowClipboardText = "";
-
-    private static void setClipBoardListener() {
-        ClipboardManager.addPrimaryClipChangedListener(new IOnPrimaryClipChangedListener.Stub() {
-            public void dispatchPrimaryClipChanged() {
-                String newClipboardText = ClipboardManager.getText();
-                if (newClipboardText == null) return;
-                if (!newClipboardText.equals(nowClipboardText)) {
-                    nowClipboardText = newClipboardText;
-                    // 发送报文
-                    ControlPacket.sendClipboardEvent(nowClipboardText);
-                }
-            }
-        });
-    }
-
     public static void setClipboardText(String text) {
         nowClipboardText = text;
         ClipboardManager.setText(nowClipboardText);
