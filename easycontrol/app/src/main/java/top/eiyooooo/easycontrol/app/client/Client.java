@@ -264,7 +264,6 @@ public class Client {
 
   // 服务分发
   private static final int AUDIO_EVENT = 2;
-  private static final int CLIPBOARD_EVENT = 3;
   private static final int CHANGE_SIZE_EVENT = 4;
   private static final int KEEP_ALIVE_EVENT = 5;
 
@@ -313,14 +312,6 @@ public class Client {
       }
     } catch (Exception e) {
       release(AppData.main.getString(R.string.error_notify));
-    }
-  }
-
-  private void executeOtherService() {
-    if (status == 1) {
-      controlPacket.checkClipBoard();
-      controlPacket.sendKeepAlive();
-      AppData.uiHandler.postDelayed(this::executeOtherService, 1500);
     }
   }
 
