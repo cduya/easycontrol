@@ -18,8 +18,6 @@ public class Device {
   public boolean useH265;
   public boolean useOpus;
   public boolean connectOnStart;
-  public boolean clipboardSync;
-  public boolean nightModeSync;
   public int connection = -1; // -1:未检查连接 0:检查连接中 1:可以连接 2:无法连接
 
   public Device(String uuid,
@@ -35,9 +33,7 @@ public class Device {
                 boolean defaultFull,
                 boolean useH265,
                 boolean useOpus,
-                boolean connectOnStart,
-                boolean clipboardSync,
-                boolean nightModeSync) {
+                boolean connectOnStart,) {
     this.uuid = uuid;
     this.type = type;
     this.name = name;
@@ -52,8 +48,6 @@ public class Device {
     this.useH265 = useH265;
     this.useOpus = useOpus;
     this.connectOnStart = connectOnStart;
-    this.clipboardSync = clipboardSync;
-    this.nightModeSync = nightModeSync;
   }
 
   public Device(String uuid, int type) {
@@ -74,12 +68,10 @@ public class Device {
     target.useH265 = source.useH265;
     target.useOpus = source.useOpus;
     target.connectOnStart = source.connectOnStart;
-    target.clipboardSync = source.clipboardSync;
-    target.nightModeSync = source.nightModeSync;
   }
 
   public static Device getDefaultDevice(String uuid, int type) {
-    return new Device(uuid, type, uuid, "", "", AppData.setting.getDefaultIsAudio(), AppData.setting.getDefaultMaxSize(), AppData.setting.getDefaultMaxFps(), AppData.setting.getDefaultMaxVideoBit(), AppData.setting.getDefaultSetResolution(), true, AppData.setting.getDefaultUseH265(), AppData.setting.getDefaultUseOpus(), false, AppData.setting.getDefaultClipboardSync(), AppData.setting.getDefaultNightModeSync());
+    return new Device(uuid, type, uuid, "", "", AppData.setting.getDefaultIsAudio(), AppData.setting.getDefaultMaxSize(), AppData.setting.getDefaultMaxFps(), AppData.setting.getDefaultMaxVideoBit(), AppData.setting.getDefaultSetResolution(), AppData.setting.getDefaultFull(), AppData.setting.getDefaultUseH265(), AppData.setting.getDefaultUseOpus(), false, SMALL_X, SMALL_Y, SMALL_WIDTH, SMALL_HEIGHT, SMALL_X, SMALL_Y, SMALL_WIDTH, SMALL_HEIGHT, SMALL_X, SMALL_Y, SMALL_WIDTH, SMALL_HEIGHT, SMALL_X, SMALL_Y, SMALL_WIDTH, SMALL_HEIGHT, SMALL_X, SMALL_Y, SMALL_WIDTH, SMALL_HEIGHT,MINI_Y); 
   }
 
   public boolean isNormalDevice() {
