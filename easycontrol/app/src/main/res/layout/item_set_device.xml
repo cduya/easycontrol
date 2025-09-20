@@ -20,15 +20,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginBottom="12dp"
-    android:paddingStart="18dp"
-    android:paddingEnd="18dp">
+    android:layout_marginBottom="30dp"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp">
 
     <Button
       android:id="@+id/button_change"
       android:layout_width="match_parent"
       android:background="@drawable/background_cron"
       android:backgroundTint="@color/alert"
+      android:layout_marginBottom="15dp"
       android:gravity="center"
       android:text="@string/set_device_button_change"
       android:textColor="@color/onAlert"
