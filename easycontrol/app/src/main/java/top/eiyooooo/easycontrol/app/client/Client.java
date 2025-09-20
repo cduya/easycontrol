@@ -115,7 +115,6 @@ public class Client {
           clientView.changeToFull();
         });
       } catch (Exception e) {
-        L.log(device.uuid, e);
         release(AppData.main.getString(R.string.log_notify));
       } finally {
         loadingTimeOutThread.interrupt();
@@ -168,7 +167,6 @@ public class Client {
       try {
         while (!Thread.interrupted()) {
           String log = new String(shell.readAllBytes().array(), StandardCharsets.UTF_8);
-          if (!log.isEmpty()) L.logWithoutTime(uuid, log);
           Thread.sleep(1000);
         }
       } catch (Exception ignored) {
@@ -287,7 +285,6 @@ public class Client {
         videoDecode.decodeIn(controlPacket.readFrame(videoStream), videoStream.readLong());
       }
     } catch (Exception e) {
-      L.log(uuid, e);
       release(AppData.main.getString(R.string.log_notify));
     }
   }
@@ -322,7 +319,6 @@ public class Client {
         }
       }
     } catch (Exception e) {
-      L.log(uuid, e);
       release(AppData.main.getString(R.string.log_notify));
     }
   }
@@ -339,7 +335,6 @@ public class Client {
     try {
       bufferStream.write(byteBuffer);
     } catch (Exception e) {
-      L.log(uuid, e);
       release(AppData.main.getString(R.string.log_notify));
     }
   }
@@ -383,7 +378,6 @@ public class Client {
           case 2:
             if (loggerThread != null) loggerThread.interrupt();
             String log = new String(shell.readAllBytes().array(), StandardCharsets.UTF_8);
-            if (!log.isEmpty()) L.logWithoutTime(uuid, log);
             break;
           case 3:
             keepAliveThread.interrupt();
@@ -434,7 +428,6 @@ public class Client {
       }
       return appList;
     } catch (Exception e) {
-      L.log(device.uuid, e);
       return new ArrayList<>();
     }
   }
