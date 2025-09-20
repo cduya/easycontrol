@@ -176,7 +176,7 @@ public class Client {
 
   private void tryCreateDisplay(Device device) {
     try {
-      adb.runAdbCmd("settings put global force_desktop_mode_on_external_displays 0");
+      adb.runAdbCmd("settings put global force_desktop_mode_on_external_displays 1");
       String output = Adb.getStringResponseFromServer(device, "createVirtualDisplay");
       if (output.contains("success")) {
         displayId = Integer.parseInt(output.substring(output.lastIndexOf(" -> ") + 4));
