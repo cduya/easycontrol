@@ -337,6 +337,7 @@ public class Adb {
         PublicTools.logToast(AppData.main.getString(R.string.log_notify));
       }
       close();
+    }
   }
 
   private BufferStream createNewStream(int localId, int remoteId, boolean canMultipleSend) throws Exception {
