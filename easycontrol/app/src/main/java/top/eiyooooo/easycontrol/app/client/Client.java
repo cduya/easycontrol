@@ -302,10 +302,6 @@ public class Client {
               if (multiLink != 2) playAudio(true);
             }
             break;
-          case CLIPBOARD_EVENT:
-            controlPacket.nowClipboardText = new String(bufferStream.readByteArray(bufferStream.readInt()).array());
-            AppData.clipBoard.setPrimaryClip(ClipData.newPlainText(MIMETYPE_TEXT_PLAIN, controlPacket.nowClipboardText));
-            break;
           case CHANGE_SIZE_EVENT:
             Pair<Integer, Integer> newVideoSize = new Pair<>(bufferStream.readInt(), bufferStream.readInt());
             AppData.uiHandler.post(() -> clientView.updateVideoSize(newVideoSize));
