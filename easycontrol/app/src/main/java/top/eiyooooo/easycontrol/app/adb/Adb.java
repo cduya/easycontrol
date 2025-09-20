@@ -99,7 +99,6 @@ public class Adb {
       serverShell.write(ByteBuffer.wrap(cmd.getBytes()));
       waitingData(0);
     } catch (Exception e) {
-      L.log(uuid, e);
       PublicTools.logToast(AppData.main.getString(R.string.log_notify));
     }
   }
@@ -320,7 +319,6 @@ public class Adb {
       }
     } catch (Exception e) {
       if (!closing) {
-        L.log(uuid, e);
         PublicTools.logToast(AppData.main.getString(R.string.log_notify));
       }
       close();
@@ -336,7 +334,6 @@ public class Adb {
       }
     } catch (Exception e) {
       if (!closing) {
-        L.log(uuid, e);
         PublicTools.logToast(AppData.main.getString(R.string.log_notify));
       }
       close();
