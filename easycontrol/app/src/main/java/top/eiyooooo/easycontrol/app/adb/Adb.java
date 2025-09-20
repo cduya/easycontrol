@@ -98,9 +98,7 @@ public class Adb {
       serverShell = getShell();
       serverShell.write(ByteBuffer.wrap(cmd.getBytes()));
       waitingData(0);
-    } catch (Exception e) {
-      PublicTools.logToast(AppData.main.getString(R.string.log_notify));
-    }
+    } 
   }
 
   public static String getStringResponseFromServer(Device device, String request, String... args) throws Exception {
@@ -317,12 +315,7 @@ public class Adb {
           }
         }
       }
-    } catch (Exception e) {
-      if (!closing) {
-        PublicTools.logToast(AppData.main.getString(R.string.log_notify));
-      }
-      close();
-    }
+    } 
   }
 
   private void handleOut() {
@@ -332,12 +325,7 @@ public class Adb {
         if (!sendBuffer.isEmpty()) channel.write(sendBuffer.read(sendBuffer.getSize()));
         channel.flush();
       }
-    } catch (Exception e) {
-      if (!closing) {
-        PublicTools.logToast(AppData.main.getString(R.string.log_notify));
-      }
-      close();
-    }
+    } 
   }
 
   private BufferStream createNewStream(int localId, int remoteId, boolean canMultipleSend) throws Exception {
