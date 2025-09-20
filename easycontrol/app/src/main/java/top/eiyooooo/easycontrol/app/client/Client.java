@@ -111,7 +111,6 @@ public class Client {
         startServer(device);
         connectServer();
         AppData.uiHandler.post(() -> {
-          if (device.nightModeSync) controlPacket.sendNightModeEvent(AppData.nightMode);
           clientView.changeToFull();
         });
       } catch (Exception e) {
@@ -307,7 +306,7 @@ public class Client {
             break;
           case CLIPBOARD_EVENT:
             controlPacket.nowClipboardText = new String(bufferStream.readByteArray(bufferStream.readInt()).array());
-            if (clientView.device.clipboardSync) AppData.clipBoard.setPrimaryClip(ClipData.newPlainText(MIMETYPE_TEXT_PLAIN, controlPacket.nowClipboardText));
+            AppData.clipBoard.setPrimaryClip(ClipData.newPlainText(MIMETYPE_TEXT_PLAIN, controlPacket.nowClipboardText));
             break;
           case CHANGE_SIZE_EVENT:
             Pair<Integer, Integer> newVideoSize = new Pair<>(bufferStream.readInt(), bufferStream.readInt());
@@ -325,7 +324,7 @@ public class Client {
 
   private void executeOtherService() {
     if (status == 1) {
-      if (clientView.device.clipboardSync) controlPacket.checkClipBoard();
+      controlPacket.checkClipBoard();
       controlPacket.sendKeepAlive();
       AppData.uiHandler.postDelayed(this::executeOtherService, 1500);
     }
