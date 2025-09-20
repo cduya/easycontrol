@@ -52,7 +52,6 @@
   <string name="set_mirror_mode">高版本兼容模式</string>
   <string name="set_mirror_mode_detail">高版本系统若出现画面异常可尝试开启此选项</string>
   <string name="set_force_desktop_mode">应用流转时强制桌面模式</string>
-  <string name="set_force_desktop_mode_detail">开启后输入法可同步流转，不建议开启</string>
   <string name="set_try_start_default_in_app_transfer">打开默认设备时尝试应用流转</string>
   <string name="set_try_start_default_in_app_transfer_detail">打开默认设备时尝试应用流转</string>
   <string name="set_reconnect">显示重连对话框</string>
@@ -101,7 +100,6 @@
   <!-- 设备设置模块 -->
   <string name="set_device_title">设备配置</string>
   <string name="set_device_button_recover_error">连接失败，请检查ADB和网络</string>
-  <string name="set_device_button_get_uuid">获取标识</string>
   <string name="set_device_button_get_uuid_success">已复制</string>
   <string name="set_device_button_start_wireless">打开无线</string>
   <string name="set_device_button_start_wireless_success">成功</string>
@@ -112,7 +110,6 @@
   <string name="loading_text">屏幕镜像</string>
   
   <!-- 错误提示 -->
-  <string name="error_no_browser">没有默认浏览器</string>
   <string name="error_address_error">地址格式错误</string>
   <string name="error_refused_back">全屏状态会拦截返回</string>
   <string name="error_connect_server">连接被控端失败</string>
