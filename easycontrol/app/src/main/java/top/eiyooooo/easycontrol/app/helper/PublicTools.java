@@ -293,10 +293,6 @@ public class PublicTools {
       if (setDefault) AppData.setting.setDefaultIsAudio(isChecked);
       else device.isAudio = isChecked;
     }).getRoot());
-    fatherLayout.addView(createSwitchCard(context, context.getString(R.string.option_clipboard_sync), context.getString(R.string.option_clipboard_sync_detail), setDefault ? AppData.setting.getDefaultClipboardSync() : device.clipboardSync, isChecked -> {
-      if (setDefault) AppData.setting.setDefaultClipboardSync(isChecked);
-      else device.clipboardSync = isChecked;
-    }).getRoot());
     fatherLayout.addView(createSwitchCard(context, context.getString(R.string.option_night_mode_sync), context.getString(R.string.option_night_mode_sync_detail), setDefault ? AppData.setting.getDefaultNightModeSync() : device.nightModeSync, isChecked -> {
       if (setDefault) AppData.setting.setDefaultNightModeSync(isChecked);
       else device.nightModeSync = isChecked;
