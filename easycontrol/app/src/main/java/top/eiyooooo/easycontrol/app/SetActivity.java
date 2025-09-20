@@ -104,7 +104,6 @@ public class SetActivity extends Activity {
       AppData.reGenerateAdbKeyPair(this);
       Toast.makeText(this, getString(R.string.set_other_clear_key_code), Toast.LENGTH_SHORT).show();
     }).getRoot());
-    setActivity.setOther.addView(PublicTools.createTextCard(this, getString(R.string.set_other_log), () -> startActivity(new Intent(this, LogActivity.class))).getRoot());
   }
 
   // 设置按钮监听
