@@ -99,8 +99,7 @@ public class Adb {
       serverShell.write(ByteBuffer.wrap(cmd.getBytes()));
       waitingData(0);
     } catch (Exception e) {
-        if (!closing) {
-        PublicTools.logToast(AppData.main.getString(R.string.error_device_not_found));
+         PublicTools.logToast(AppData.main.getString(R.string.error_device_not_found));
       }    
   }
 
@@ -322,6 +321,7 @@ public class Adb {
         if (!closing) {
         PublicTools.logToast(AppData.main.getString(R.string.error_device_not_found));
       }
+      close();
     }
   }
 
@@ -333,7 +333,6 @@ public class Adb {
         channel.flush();
       }
     } catch (Exception e) {
-        if (!closing) {
         PublicTools.logToast(AppData.main.getString(R.string.error_device_not_found));
       }
   }
