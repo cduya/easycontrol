@@ -18,7 +18,6 @@ import top.eiyooooo.easycontrol.app.buffer.Buffer;
 import top.eiyooooo.easycontrol.app.buffer.BufferStream;
 import top.eiyooooo.easycontrol.app.entity.AppData;
 import top.eiyooooo.easycontrol.app.entity.Device;
-import top.eiyooooo.easycontrol.app.helper.L;
 import top.eiyooooo.easycontrol.app.helper.PublicTools;
 
 public class Adb {
