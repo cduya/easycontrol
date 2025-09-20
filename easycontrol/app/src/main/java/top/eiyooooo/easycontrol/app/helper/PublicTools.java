@@ -97,78 +97,7 @@ public class PublicTools {
     dialog.setCancelable(canCancel);
     dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
     return dialog;
-  }
-
-  public static void showNightModeChanger(Context context, Device device) {
-    String currentNightMode = getCurrentNightMode(context, device);
-    ItemNightModeChangerBinding nightModeChangerView = ItemNightModeChangerBinding.inflate(LayoutInflater.from(context));
-    nightModeChangerView.title.setText(currentNightMode);
-    nightModeChangerView.buttonAuto.setOnClickListener(v -> {
-      try {
-        if (Adb.getStringResponseFromServer(device, "setNightMode", "nightMode=0").contains("success")) {
-          PublicTools.logToast(AppData.main.getString(R.string.change_night_mode_success));
-        } else throw new Exception();
-      } catch (Exception ignored) {
-        PublicTools.logToast(AppData.main.getString(R.string.change_night_mode_failed));
-      }
-      nightModeChangerView.title.setText(getCurrentNightMode(context, device));
-    });
-    nightModeChangerView.buttonCustom.setOnClickListener(v -> {
-      try {
-        if (Adb.getStringResponseFromServer(device, "setNightMode", "nightMode=3").contains("success")) {
-          PublicTools.logToast(AppData.main.getString(R.string.change_night_mode_success));
-        } else throw new Exception();
-      } catch (Exception ignored) {
-        PublicTools.logToast(AppData.main.getString(R.string.change_night_mode_failed));
-      }
-      nightModeChangerView.title.setText(getCurrentNightMode(context, device));
-    });
-    nightModeChangerView.buttonYes.setOnClickListener(v -> {
-      try {
-        if (Adb.getStringResponseFromServer(device, "setNightMode", "nightMode=2").contains("success")) {
-          PublicTools.logToast(AppData.main.getString(R.string.change_night_mode_success));
-        } else throw new Exception();
-      } catch (Exception ignored) {
-        PublicTools.logToast(AppData.main.getString(R.string.change_night_mode_failed));
-      }
-      nightModeChangerView.title.setText(getCurrentNightMode(context, device));
-    });
-    nightModeChangerView.buttonNo.setOnClickListener(v -> {
-      try {
-        if (Adb.getStringResponseFromServer(device, "setNightMode", "nightMode=1").contains("success")) {
-          PublicTools.logToast(AppData.main.getString(R.string.change_night_mode_success));
-        } else throw new Exception();
-      } catch (Exception ignored) {
-        PublicTools.logToast(AppData.main.getString(R.string.change_night_mode_failed));
-      }
-      nightModeChangerView.title.setText(getCurrentNightMode(context, device));
-    });
-    Dialog nightModeChangerDialog = PublicTools.createDialog(context, true, nightModeChangerView.getRoot());
-    nightModeChangerDialog.show();
-  }
-
-  private static String getCurrentNightMode(Context context, Device device) {
-    String currentNightMode = context.getString(R.string.night_mode_current);
-    try {
-      switch (Integer.parseInt(Adb.getStringResponseFromServer(device, "getNightMode"))) {
-        case 0:
-          currentNightMode = currentNightMode + context.getString(R.string.night_mode_auto);
-          break;
-        case 1:
-          currentNightMode = currentNightMode + context.getString(R.string.night_mode_no);
-          break;
-        case 2:
-          currentNightMode = currentNightMode + context.getString(R.string.night_mode_yes);
-          break;
-        case 3:
-          currentNightMode = currentNightMode + context.getString(R.string.night_mode_custom);
-          break;
-      }
-    } catch (Exception ignored) {
-      currentNightMode = context.getString(R.string.set_device_button_night_mode);
-    }
-    return currentNightMode;
-  }
+  }  
 
   // 创建新建设备弹窗
   public static Dialog createAddDeviceView(
