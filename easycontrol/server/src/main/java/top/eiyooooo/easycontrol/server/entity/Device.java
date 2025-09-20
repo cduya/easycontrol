@@ -42,8 +42,6 @@ public final class Device {
         getDeviceSize();
         // 旋转监听
         setRotationListener();
-        // 剪切板监听
-        setClipBoardListener();
         // 设置不息屏
         if (Options.keepAwake) setKeepScreenLight();
     }
@@ -99,11 +97,6 @@ public final class Device {
         minor = minor + 4 & ~7;
         major = major + 4 & ~7;
         videoSize = isPortrait ? new Pair<>(minor, major) : new Pair<>(major, minor);
-    }
-
-    public static void setClipboardText(String text) {
-        nowClipboardText = text;
-        ClipboardManager.setText(nowClipboardText);
     }
 
     private static void setRotationListener() {
