@@ -51,7 +51,6 @@
   <string name="set_set_full_screen_detail">若不希望全屏模式时本机导航栏消失，可关闭</string>
   <string name="set_mirror_mode">高版本兼容模式</string>
   <string name="set_mirror_mode_detail">高版本系统若出现画面异常可尝试开启此选项</string>
-  <string name="set_force_desktop_mode">应用流转时强制桌面模式</string>
   <string name="set_try_start_default_in_app_transfer">打开默认设备时尝试应用流转</string>
   <string name="set_try_start_default_in_app_transfer_detail">打开默认设备时尝试应用流转</string>
   <string name="set_reconnect">显示重连对话框</string>
