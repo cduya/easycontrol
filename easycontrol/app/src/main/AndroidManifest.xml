@@ -34,10 +34,6 @@
       android:allowEmbedded="true"
       android:exported="false" />
     <activity
-      android:name=".LogActivity"
-      android:allowEmbedded="true"
-      android:exported="false" />
-    <activity
       android:name=".WebViewActivity"
       android:allowEmbedded="true"
       android:exported="false" />
