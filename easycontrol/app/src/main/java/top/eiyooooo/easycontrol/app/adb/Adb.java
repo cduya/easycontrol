@@ -333,8 +333,10 @@ public class Adb {
         channel.flush();
       }
     } catch (Exception e) {
+        if (!closing) {
         PublicTools.logToast(AppData.main.getString(R.string.error_device_not_found));
       }
+      close();
   }
 
   private BufferStream createNewStream(int localId, int remoteId, boolean canMultipleSend) throws Exception {
