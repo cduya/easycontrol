@@ -242,7 +242,7 @@ public final class Scrcpy {
 
         // 5
         try {
-            if (timeoutClose || lastScrcpy) {
+            if (timeoutClose || Integer.parseInt(Channel.execReadOutput("ps -ef | grep easycontrol.server.Scrcpy | grep -v grep | grep -c 'easycontrol.server.Scrcpy'").replace("<!@n@!>", "")) == 1) {
                 if (Options.TurnOffScreenIfStop) Device.keyEvent(223, 0, 0);
                 else if (Options.TurnOnScreenIfStop) Device.changeScreenPowerMode(Display.STATE_ON);
             }
