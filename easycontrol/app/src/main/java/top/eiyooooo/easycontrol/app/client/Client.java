@@ -115,7 +115,7 @@ public class Client {
           clientView.changeToFull();
         });
       } catch (Exception e) {
-        release(AppData.main.getString(R.string.log_notify));
+        release(AppData.main.getString(R.string.error_notify));
       } finally {
         loadingTimeOutThread.interrupt();
         keepAliveThread.start();
@@ -285,7 +285,7 @@ public class Client {
         videoDecode.decodeIn(controlPacket.readFrame(videoStream), videoStream.readLong());
       }
     } catch (Exception e) {
-      release(AppData.main.getString(R.string.log_notify));
+      release(AppData.main.getString(R.string.error_notify));
     }
   }
 
@@ -319,7 +319,7 @@ public class Client {
         }
       }
     } catch (Exception e) {
-      release(AppData.main.getString(R.string.log_notify));
+      release(AppData.main.getString(R.string.error_notify));
     }
   }
 
@@ -335,7 +335,7 @@ public class Client {
     try {
       bufferStream.write(byteBuffer);
     } catch (Exception e) {
-      release(AppData.main.getString(R.string.log_notify));
+      release(AppData.main.getString(R.string.error_notify));
     }
   }
 
