@@ -13,7 +13,6 @@ import top.eiyooooo.easycontrol.server.utils.L;
 import top.eiyooooo.easycontrol.server.utils.Workarounds;
 import top.eiyooooo.easycontrol.server.wrappers.DisplayManager;
 import top.eiyooooo.easycontrol.server.wrappers.ServiceManager;
-import top.eiyooooo.easycontrol.server.wrappers.UiModeManager;
 
 import java.io.DataOutputStream;
 import java.nio.charset.StandardCharsets;
