@@ -152,22 +152,19 @@ public final class Scrcpy {
                         ControlPacket.handleKeyEvent();
                         break;
                     case 3:
-                        ControlPacket.handleClipboardEvent();
-                        break;
-                    case 4:
                         ControlPacket.sendKeepAlive();
                         lastKeepAliveTime = System.currentTimeMillis();
                         break;
-                    case 5:
+                    case 4:
                         Device.handleConfigChanged(inputStream.readInt());
                         break;
-                    case 6:
+                    case 5:
                         Device.rotateDevice(inputStream.readInt());
                         break;
-                    case 7:
+                    case 6:
                         Device.changeScreenPowerMode(inputStream.readByte());
                         break;
-                    case 8:
+                    case 7:
                         Device.changePower();
                         break;
                 }
