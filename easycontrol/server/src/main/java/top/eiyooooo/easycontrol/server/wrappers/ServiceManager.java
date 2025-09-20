@@ -13,7 +13,7 @@ public class ServiceManager {
 
     @SuppressLint({"DiscouragedPrivateApi", "PrivateApi"})
     public static void setManagers() {
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 7; i++) {
             try {
                 switch (i) {
                     case 0:
@@ -42,9 +42,6 @@ public class ServiceManager {
                         break;
                     case 6:
                         IPackageManager.init(getService("package", "android.content.pm.IPackageManager"));
-                        break;
-                    case 7:
-                        UiModeManager.init(getService("uimode", "android.app.IUiModeManager"));
                         break;
                 }
             } catch (Exception e) {
