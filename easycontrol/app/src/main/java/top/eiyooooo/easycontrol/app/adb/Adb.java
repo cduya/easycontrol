@@ -315,7 +315,11 @@ public class Adb {
           }
         }
       }
-    } 
+    } catch (Exception e) {
+        if (!closing) {
+        PublicTools.logToast(AppData.main.getString(R.string.error_device_not_found));
+      }
+    }
   }
 
   private void handleOut() {
@@ -325,7 +329,10 @@ public class Adb {
         if (!sendBuffer.isEmpty()) channel.write(sendBuffer.read(sendBuffer.getSize()));
         channel.flush();
       }
-    } 
+    } catch (Exception e) {
+        if (!closing) {
+        PublicTools.logToast(AppData.main.getString(R.string.error_device_not_found));
+      }
   }
 
   private BufferStream createNewStream(int localId, int remoteId, boolean canMultipleSend) throws Exception {
