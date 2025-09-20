@@ -1,7 +1,5 @@
 package top.eiyooooo.easycontrol.app.helper;
 
-import static android.content.ClipDescription.MIMETYPE_TEXT_PLAIN;
-
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Context;
