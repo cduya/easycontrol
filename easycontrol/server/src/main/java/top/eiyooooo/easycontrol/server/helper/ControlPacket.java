@@ -78,14 +78,5 @@ public final class ControlPacket {
         else
             Device.keyEvent(keyCode, meta, displayIdToInject);
     }
-
-    public static void handleClipboardEvent() throws IOException {
-        int size = Scrcpy.inputStream.readInt();
-        byte[] textBytes = new byte[size];
-        Scrcpy.inputStream.readFully(textBytes);
-        String text = new String(textBytes, StandardCharsets.UTF_8);
-        Device.setClipboardText(text);
-    }
-
 }
 
