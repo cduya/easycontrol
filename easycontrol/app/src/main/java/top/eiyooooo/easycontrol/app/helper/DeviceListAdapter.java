@@ -252,7 +252,7 @@ public class DeviceListAdapter extends BaseExpandableListAdapter {
         Client.restartOnTcpip(device, usbDevice, result -> AppData.uiHandler.post(() -> Toast.makeText(AppData.main, AppData.main.getString(result ? R.string.set_device_button_start_wireless_success : R.string.set_device_button_recover_error), Toast.LENGTH_SHORT).show()));
       });
     } else {
-      itemSetDeviceBinding.buttonStartWireless.setVisibility(View.GONE);
+      
     }
     itemSetDeviceBinding.buttonGetUuid.setOnClickListener(v -> {
       dialog.cancel();
