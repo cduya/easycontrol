@@ -483,7 +483,13 @@ public class Client {
     }).start();
     clientView.changeMode(mode);
   }
-
+  
+  public void changeMultiLinkMode(int multiLink) {
+    playAudio(multiLink == 0 || multiLink == 1);
+    this.multiLink = multiLink;
+    clientView.multiLink = multiLink;
+  }
+  
   public void playAudio(boolean play) {
     if (audioDecode != null) audioDecode.playAudio(play);
   }
