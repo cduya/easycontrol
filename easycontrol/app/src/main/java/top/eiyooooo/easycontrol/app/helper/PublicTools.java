@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.PixelFormat;
@@ -472,19 +471,6 @@ public class PublicTools {
       while (!executor.awaitTermination(1, TimeUnit.SECONDS)) {}
     } catch (InterruptedException ignored) {}
     return scannedAddresses;
-  }
-
-  // 浏览器打开
-  public static void startUrl(Context context,String url) {
-    try {
-      Intent intent = new Intent(Intent.ACTION_VIEW);
-      intent.addCategory(Intent.CATEGORY_BROWSABLE);
-      intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-      intent.setData(Uri.parse(url));
-      context.startActivity(intent);
-    } catch (Exception ignored) {
-      Toast.makeText(context, context.getString(R.string.error_no_browser), Toast.LENGTH_SHORT).show();
-    }
   }
 
   // 获取解码器是否支持
