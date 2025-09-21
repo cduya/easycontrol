@@ -51,6 +51,8 @@
   <string name="set_set_full_screen_detail">若不希望全屏模式时本机导航栏消失，可关闭</string>
   <string name="set_mirror_mode">高版本兼容模式</string>
   <string name="set_mirror_mode_detail">高版本系统若出现画面异常可尝试开启此选项</string>
+  <string name="set_force_desktop_mode">应用流转时强制桌面模式</string>
+  <string name="set_force_desktop_mode_detail">开启后输入法可同步流转，不建议开启</string>
   <string name="set_try_start_default_in_app_transfer">打开默认设备时尝试应用流转</string>
   <string name="set_try_start_default_in_app_transfer_detail">打开默认设备时尝试应用流转</string>
   <string name="set_reconnect">显示重连对话框</string>
@@ -98,7 +100,16 @@
 
   <!-- 设备设置模块 -->
   <string name="set_device_title">设备配置</string>
+  <string name="set_device_button_night_mode">黑暗模式</string>
+  <string name="night_mode_current">黑暗模式: </string>
+  <string name="night_mode_auto">自动</string>
+  <string name="night_mode_custom">自定义</string>
+  <string name="night_mode_yes">开启</string>
+  <string name="night_mode_no">关闭</string>
+  <string name="change_night_mode_success">请求成功</string>
+  <string name="change_night_mode_failed">请求失败</string>
   <string name="set_device_button_recover_error">连接失败，请检查ADB和网络</string>
+  <string name="set_device_button_get_uuid">获取标识</string>
   <string name="set_device_button_get_uuid_success">已复制</string>
   <string name="set_device_button_start_wireless">打开无线</string>
   <string name="set_device_button_start_wireless_success">成功</string>
@@ -109,6 +120,7 @@
   <string name="loading_text">屏幕镜像</string>
   
   <!-- 错误提示 -->
+  <string name="error_no_browser">没有默认浏览器</string>
   <string name="error_address_error">地址格式错误</string>
   <string name="error_refused_back">全屏状态会拦截返回</string>
   <string name="error_connect_server">连接被控端失败</string>
@@ -135,6 +147,10 @@
   <string name="option_default_usb_device_detail">软件启动或检测到此有线设备时自动连接</string>
   <string name="option_is_audio">传输音频</string>
   <string name="option_is_audio_detail">开启后将尝试传输音频</string>
+  <string name="option_clipboard_sync">剪贴板同步</string>
+  <string name="option_clipboard_sync_detail">同步主控端和被控端的剪贴板</string>
+  <string name="option_night_mode_sync">黑暗模式</string>
+  <string name="option_night_mode_sync_detail">同步主控端和被控端的黑暗模式</string>
   <string name="option_max_size">最大大小</string>
   <string name="option_max_size_detail">设置画面长和宽的最大大小</string>
   <string name="option_max_size_original">原始分辨率</string>
