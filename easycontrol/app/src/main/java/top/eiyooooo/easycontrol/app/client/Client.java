@@ -263,8 +263,8 @@ public class Client {
 
   // 服务分发
   private static final int AUDIO_EVENT = 2;
-  private static final int CHANGE_SIZE_EVENT = 4;
-  private static final int KEEP_ALIVE_EVENT = 5;
+  private static final int CHANGE_SIZE_EVENT = 3;
+  private static final int KEEP_ALIVE_EVENT = 4;
 
   private void executeStreamVideo() {
     try {
