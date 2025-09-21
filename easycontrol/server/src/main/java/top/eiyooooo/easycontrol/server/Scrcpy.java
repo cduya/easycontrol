@@ -13,6 +13,8 @@ import top.eiyooooo.easycontrol.server.helper.VideoEncode;
 import top.eiyooooo.easycontrol.server.utils.L;
 import top.eiyooooo.easycontrol.server.utils.Workarounds;
 import top.eiyooooo.easycontrol.server.wrappers.ServiceManager;
+import top.eiyooooo.easycontrol.server.wrappers.UiModeManager;
+
 import java.io.DataInputStream;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -152,20 +154,27 @@ public final class Scrcpy {
                         ControlPacket.handleKeyEvent();
                         break;
                     case 3:
+                        ControlPacket.handleClipboardEvent();
+                        break;
+                    case 4:
                         ControlPacket.sendKeepAlive();
                         lastKeepAliveTime = System.currentTimeMillis();
                         break;
-                    case 4:
+                    case 5:
                         Device.handleConfigChanged(inputStream.readInt());
                         break;
-                    case 5:
+                    case 6:
                         Device.rotateDevice(inputStream.readInt());
                         break;
-                    case 6:
+                    case 7:
                         Device.changeScreenPowerMode(inputStream.readByte());
                         break;
-                    case 7:
+                    case 8:
                         Device.changePower();
+                        break;
+                    case 9:
+                        if (Device.oldNightMode == -1) Device.oldNightMode = UiModeManager.getNightMode();
+                        UiModeManager.setNightMode(inputStream.readByte());
                         break;
                 }
             }
@@ -193,7 +202,13 @@ public final class Scrcpy {
 
     // 释放资源
     private static void release() {
-        
+        boolean lastScrcpy = false;
+        try {
+            lastScrcpy = Integer.parseInt(Channel.execReadOutput("ps -ef | grep easycontrol.server.Scrcpy | grep -v grep | grep -c 'easycontrol.server.Scrcpy'").replace("<!@n@!>", "")) == 1;
+        } catch (Exception e) {
+            L.w("get lastScrcpy error", e);
+        }
+
         // 1
         try {
             inputStream.close();
@@ -227,6 +242,9 @@ public final class Scrcpy {
                 L.e("release error", e);
             }
         }
+        if (lastScrcpy && Device.oldNightMode != -1 && UiModeManager.getNightMode() != Device.oldNightMode) {
+            UiModeManager.setNightMode(Device.oldNightMode);
+        }
 
         // 4
         if (Options.keepAwake) {
@@ -239,7 +257,7 @@ public final class Scrcpy {
 
         // 5
         try {
-            if (timeoutClose || Integer.parseInt(Channel.execReadOutput("ps -ef | grep easycontrol.server.Scrcpy | grep -v grep | grep -c 'easycontrol.server.Scrcpy'").replace("<!@n@!>", "")) == 1) {
+            if (timeoutClose || lastScrcpy) {
                 if (Options.TurnOffScreenIfStop) Device.keyEvent(223, 0, 0);
                 else if (Options.TurnOnScreenIfStop) Device.changeScreenPowerMode(Display.STATE_ON);
             }

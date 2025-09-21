@@ -32,6 +32,8 @@ public final class Device {
     public static Pair<Integer, Integer> videoSize;
     public static boolean needReset = false;
     public static int oldScreenOffTimeout = 60000;
+    public static int oldNightMode = -1;
+
     public static int displayId;
     public static int layerStack;
     public static HashMap<Integer, Integer> display2virtualDisplay = new HashMap<>();
@@ -42,6 +44,8 @@ public final class Device {
         getDeviceSize();
         // 旋转监听
         setRotationListener();
+        // 剪切板监听
+        setClipBoardListener();
         // 设置不息屏
         if (Options.keepAwake) setKeepScreenLight();
     }
@@ -97,6 +101,27 @@ public final class Device {
         minor = minor + 4 & ~7;
         major = major + 4 & ~7;
         videoSize = isPortrait ? new Pair<>(minor, major) : new Pair<>(major, minor);
+    }
+
+    private static String nowClipboardText = "";
+
+    private static void setClipBoardListener() {
+        ClipboardManager.addPrimaryClipChangedListener(new IOnPrimaryClipChangedListener.Stub() {
+            public void dispatchPrimaryClipChanged() {
+                String newClipboardText = ClipboardManager.getText();
+                if (newClipboardText == null) return;
+                if (!newClipboardText.equals(nowClipboardText)) {
+                    nowClipboardText = newClipboardText;
+                    // 发送报文
+                    ControlPacket.sendClipboardEvent(nowClipboardText);
+                }
+            }
+        });
+    }
+
+    public static void setClipboardText(String text) {
+        nowClipboardText = text;
+        ClipboardManager.setText(nowClipboardText);
     }
 
     private static void setRotationListener() {
