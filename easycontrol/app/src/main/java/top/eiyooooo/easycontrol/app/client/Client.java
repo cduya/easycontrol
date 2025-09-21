@@ -81,7 +81,6 @@ public class Client {
       status = 1;
       executeStreamInThread.start();
       executeStreamVideoThread.start();  
-      AppData.uiHandler.post(this::executeOtherService);
     }, () -> release(null));
     // 连接
     loadingTimeOutThread = new Thread(() -> {
